@@ -4,7 +4,7 @@ import TituloSeccion from "./components/atoms/TituloSeccion";
 import BotonEnlace from "./components/atoms/BotonEnlace";
 import ImagenPerfil from "./components/atoms/ImagenPerfil";
 
-import ItemEstudio from "./components/molecules/ItemEstudio";
+import SeccionEstudios from "./components/organisms/SeccionEstudios";
 
 import SeccionProyectos from "./components/organisms/SeccionProyectos";
 import SeccionExperiencia from "./components/organisms/SeccionExperiencia";
@@ -13,6 +13,7 @@ import fotoPerfil from "./assets/images/perfil.jpg";
 
 import { proyectos } from "./data/proyectos";
 import { experiencias } from "./data/experiencias";
+import { estudios } from "./data/estudios";
 
 function App() {
   return (
@@ -27,11 +28,7 @@ function App() {
 
       <SeccionExperiencia experiencias={experiencias} />
 
-      <ItemEstudio
-        institucion="Instituto DUOC UC"
-        estudio="Analista Programador"
-        fecha="2025 - 2027"
-      />
+      <SeccionEstudios estudios={estudios} />
 
       <SeccionProyectos proyectos={proyectos} />
     </main>
