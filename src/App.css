@@ -38,3 +38,37 @@
   object-fit: cover; /*conserva la proporción*/
   border-radius: 16px;
 }
+
+/********** ITEM EXPERIENCIA **********/
+.item-experiencia {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  padding: 20px;
+
+  background-color: var(--color-beige);
+  border-radius: 12px;
+}
+
+.item-experiencia .ant-typography {
+  margin: 0;
+  color: var(--color-cafe);
+}
+
+/********** ITEM ESTUDIO **********/
+.item-estudio {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  padding: 20px;
+
+  background-color: var(--color-beige);
+  border-radius: 12px;
+}
+
+.item-estudio .ant-typography {
+  margin: 0;
+  color: var(--color-cafe);
+}
