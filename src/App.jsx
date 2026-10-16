@@ -4,15 +4,15 @@ import TituloSeccion from "./components/atoms/TituloSeccion";
 import BotonEnlace from "./components/atoms/BotonEnlace";
 import ImagenPerfil from "./components/atoms/ImagenPerfil";
 
-import ItemExperiencia from "./components/molecules/ItemExperiencia";
 import ItemEstudio from "./components/molecules/ItemEstudio";
-import TarjetaProyecto from "./components/molecules/TarjetaProyecto";
 
 import SeccionProyectos from "./components/organisms/SeccionProyectos";
+import SeccionExperiencia from "./components/organisms/SeccionExperiencia";
 
 import fotoPerfil from "./assets/images/perfil.jpg";
 
 import { proyectos } from "./data/proyectos";
+import { experiencias } from "./data/experiencias";
 
 function App() {
   return (
@@ -25,12 +25,7 @@ function App() {
 
       <BotonEnlace texto="Ver proyectos" enlace="#proyectos" />
 
-      <ItemExperiencia
-        empresa="Elige Verde"
-        cargo="Coordinación administrativa y atención al cliente"
-        fechaInicio="Sep 2023"
-        fechaTermino="Jun 2024"
-      />
+      <SeccionExperiencia experiencias={experiencias} />
 
       <ItemEstudio
         institucion="Instituto DUOC UC"
