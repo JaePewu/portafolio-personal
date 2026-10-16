@@ -30,3 +30,11 @@
   background-color: var(--color-naranja) !important;
   border-color: var(--color-naranja) !important;
 }
+
+/******* IMAGEN PERFIL ********/
+.imagen-perfil {
+  width: 280px;
+  height: 340px;
+  object-fit: cover; /*conserva la proporción*/
+  border-radius: 16px;
+}
