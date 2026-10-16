@@ -1,0 +1,31 @@
+:root {
+  --color-cafe: #3e2723;
+  --color-terracota: #b5522d;
+  --color-naranja: #d97745;
+  --color-verde: #6b7f55;
+  --color-beige: #eadcc8;
+  --color-crema: #f9f5ed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-crema);
+  color: var(--color-cafe);
+}
+
+button,
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+}

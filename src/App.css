@@ -1,0 +1,32 @@
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.titulo-seccion {
+  font-family: "Playfair Display", serif !important;
+  color: var(--color-cafe) !important;
+}
+
+/********** BOTON ENLACE **********/
+.boton-enlace {
+  height: 42px;
+  padding: 0 24px;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+
+  background-color: var(--color-terracota) !important;
+  border-color: var(--color-terracota) !important;
+
+  border-radius: 24px;
+}
+
+.boton-enlace:hover {
+  background-color: var(--color-naranja) !important;
+  border-color: var(--color-naranja) !important;
+}
