@@ -6,8 +6,13 @@ import ImagenPerfil from "./components/atoms/ImagenPerfil";
 
 import ItemExperiencia from "./components/molecules/ItemExperiencia";
 import ItemEstudio from "./components/molecules/ItemEstudio";
+import TarjetaProyecto from "./components/molecules/TarjetaProyecto";
+
+import SeccionProyectos from "./components/organisms/SeccionProyectos";
 
 import fotoPerfil from "./assets/images/perfil.jpg";
+
+import { proyectos } from "./data/proyectos";
 
 function App() {
   return (
@@ -32,6 +37,8 @@ function App() {
         estudio="Analista Programador"
         fecha="2025 - 2027"
       />
+
+      <SeccionProyectos proyectos={proyectos} />
     </main>
   );
 }

@@ -72,3 +72,28 @@
   margin: 0;
   color: var(--color-cafe);
 }
+
+/********** TARJETA PROYECTO **********/
+.tarjeta-proyecto {
+  max-width: 360px;
+  height: 100%;
+
+  background-color: var(--color-beige);
+  border: none;
+
+  border-radius: 16px;
+}
+
+.tarjeta-proyecto .ant-typography {
+  color: var(--color-cafe);
+}
+
+.tecnologias-proyecto {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-verde);
+}
+
+/********** SECCION PROYECTOS **********/
+.seccion-proyectos {
+  padding: 60px 0;
+}
