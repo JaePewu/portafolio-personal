@@ -2,6 +2,15 @@
   min-height: 100vh;
 }
 
+/********** PORTADA **********/
+.portada {
+  min-height: 100vh;
+  background-image: url("./assets/images/fondo-portada.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .app {
   min-height: 100vh;
   padding: 40px;
@@ -170,9 +179,44 @@
   padding: 60px 0;
 }
 
+/********** NAVBAR **********/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 18px 40px;
+  background-color: transparent;
+}
+
+.navbar-nombre {
+  flex-shrink: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-crema);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  flex: 1;
+  justify-content: flex-end;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+
+.navbar-menu a {
+  color: var(--color-crema);
+}
+
+.navbar-menu a:hover {
+  color: var(--color-naranja);
+}
+
 /********** SECCION PERSONAL **********/
 .seccion-personal {
-  padding: 80px 0 60px;
+  padding: 80px 40px 60px;
 }
 
 .contenido-personal {
@@ -184,14 +228,14 @@
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 4px;
-  color: var(--color-terracota) !important;
+  color: var(--color-naranja) !important;
 }
 
 .nombre-personal {
   margin-top: 10px !important;
   margin-bottom: 10px !important;
   font-family: "Playfair Display", serif !important;
-  color: var(--color-cafe) !important;
+  color: var(--color-crema) !important;
 }
 
 .titulo-principal {
@@ -199,7 +243,7 @@
   font-family: "Playfair Display", serif !important;
   font-size: 48px !important;
   line-height: 1.1 !important;
-  color: var(--color-cafe) !important;
+  color: var(--color-crema) !important;
 }
 
 .descripcion-personal {
@@ -207,7 +251,7 @@
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 1.7;
-  color: var(--color-cafe) !important;
+  color: var(--color-crema) !important;
 }
 
 .contenedor-imagen-personal {
@@ -219,6 +263,14 @@
 @media (max-width: 576px) {
   .app {
     padding: 24px;
+  }
+
+  .navbar {
+    padding: 16px 24px;
+  }
+
+  .navbar-nombre {
+    font-size: 18px;
   }
 
   .cabecera-experiencia,
