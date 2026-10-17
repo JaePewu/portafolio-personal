@@ -12,10 +12,11 @@ function SeccionExperiencia({ experiencias }) {
         {experiencias.map((experiencia) => (
           <Col xs={24} md={12} lg={8} key={experiencia.id}>
             <ItemExperiencia
-              empresa={experiencia.empresa}
               cargo={experiencia.cargo}
+              empresa={experiencia.empresa}
               fechaInicio={experiencia.fechaInicio}
               fechaTermino={experiencia.fechaTermino}
+              descripcion={experiencia.descripcion}
             />
           </Col>
         ))}

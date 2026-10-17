@@ -6,9 +6,11 @@ const { Title, Text } = Typography;
 function TarjetaProyecto({ titulo, descripcion, tecnologias, repositorio }) {
   return (
     <Card className="tarjeta-proyecto">
-      <Title level={3}>{titulo}</Title>
+      <Title level={3} className="titulo-proyecto">
+        {titulo}
+      </Title>
 
-      <Text>{descripcion}</Text>
+      <Text className="descripcion-proyecto">{descripcion}</Text>
 
       <p className="tecnologias-proyecto">{tecnologias}</p>
 

@@ -7,8 +7,10 @@
   padding: 40px;
 }
 
+/********** TITULOS DE SECCION **********/
 .titulo-seccion {
   font-family: "Playfair Display", serif !important;
+  font-weight: 600 !important;
   color: var(--color-cafe) !important;
 }
 
@@ -16,13 +18,10 @@
 .boton-enlace {
   height: 42px;
   padding: 0 24px;
-
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-
   background-color: var(--color-terracota) !important;
   border-color: var(--color-terracota) !important;
-
   border-radius: 24px;
 }
 
@@ -31,74 +30,203 @@
   border-color: var(--color-naranja) !important;
 }
 
-/******* IMAGEN PERFIL ********/
+/********** IMAGEN PERFIL **********/
 .imagen-perfil {
-  width: 280px;
-  height: 340px;
-  object-fit: cover; /*conserva la proporción*/
-  border-radius: 16px;
+  width: 100%;
+  max-width: 360px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 /********** ITEM EXPERIENCIA **********/
 .item-experiencia {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-
   padding: 20px;
-
   background-color: var(--color-beige);
+  border: none;
   border-radius: 12px;
 }
 
-.item-experiencia .ant-typography {
-  margin: 0;
-  color: var(--color-cafe);
+.cabecera-experiencia {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.cargo-experiencia {
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--color-cafe) !important;
+}
+
+.empresa-experiencia {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-terracota) !important;
+}
+
+.fecha-experiencia {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 8px 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: var(--color-terracota);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-terracota);
+  border-radius: 20px;
+}
+
+.descripcion-experiencia {
+  margin-top: 14px;
+  margin-bottom: 0 !important;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--color-cafe) !important;
 }
 
 /********** ITEM ESTUDIO **********/
 .item-estudio {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-
   padding: 20px;
-
   background-color: var(--color-beige);
   border-radius: 12px;
 }
 
-.item-estudio .ant-typography {
-  margin: 0;
-  color: var(--color-cafe);
+.cabecera-estudio {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.titulo-estudio {
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--color-cafe) !important;
+}
+
+.institucion-estudio {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-terracota) !important;
+}
+
+.fecha-estudio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 8px 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: var(--color-terracota);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-terracota);
+  border-radius: 20px;
 }
 
 /********** TARJETA PROYECTO **********/
 .tarjeta-proyecto {
   max-width: 360px;
   height: 100%;
-
   background-color: var(--color-beige);
   border: none;
-
   border-radius: 16px;
 }
 
-.tarjeta-proyecto .ant-typography {
-  color: var(--color-cafe);
+.titulo-proyecto {
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--color-cafe) !important;
+}
+
+.descripcion-proyecto {
+  font-family: "Inter", sans-serif;
+  color: var(--color-cafe) !important;
 }
 
 .tecnologias-proyecto {
   font-family: "Poppins", sans-serif;
+  font-weight: 500;
   color: var(--color-verde);
 }
 
-/********** SECCION PROYECTOS **********/
+/********** SECCIONES **********/
+.seccion-experiencia,
+.seccion-estudios,
 .seccion-proyectos {
   padding: 60px 0;
 }
 
-/********** SECCION EXPERIENCIA **********/
-.seccion-experiencia {
-  padding: 60px 0;
+/********** SECCION PERSONAL **********/
+.seccion-personal {
+  padding: 80px 0 60px;
+}
+
+.contenido-personal {
+  max-width: 620px;
+}
+
+.etiqueta-personal {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--color-terracota) !important;
+}
+
+.nombre-personal {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  font-family: "Playfair Display", serif !important;
+  color: var(--color-cafe) !important;
+}
+
+.titulo-principal {
+  margin-top: 0 !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: 48px !important;
+  line-height: 1.1 !important;
+  color: var(--color-cafe) !important;
+}
+
+.descripcion-personal {
+  max-width: 540px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-cafe) !important;
+}
+
+.contenedor-imagen-personal {
+  display: flex;
+  justify-content: center;
+}
+
+/********** MEDIA QUERIES **********/
+@media (max-width: 576px) {
+  .app {
+    padding: 24px;
+  }
+
+  .cabecera-experiencia,
+  .cabecera-estudio {
+    flex-direction: column;
+  }
+
+  .titulo-principal {
+    font-size: 38px !important;
+  }
 }

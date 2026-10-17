@@ -1,30 +1,19 @@
 import "./App.css";
 
-import TituloSeccion from "./components/atoms/TituloSeccion";
-import BotonEnlace from "./components/atoms/BotonEnlace";
-import ImagenPerfil from "./components/atoms/ImagenPerfil";
-
-import SeccionEstudios from "./components/organisms/SeccionEstudios";
-
-import SeccionProyectos from "./components/organisms/SeccionProyectos";
+import SeccionPersonal from "./components/organisms/SeccionPersonal";
 import SeccionExperiencia from "./components/organisms/SeccionExperiencia";
+import SeccionEstudios from "./components/organisms/SeccionEstudios";
+import SeccionProyectos from "./components/organisms/SeccionProyectos";
 
-import fotoPerfil from "./assets/images/perfil.jpg";
-
-import { proyectos } from "./data/proyectos";
+import { perfil } from "./data/perfil";
 import { experiencias } from "./data/experiencias";
 import { estudios } from "./data/estudios";
+import { proyectos } from "./data/proyectos";
 
 function App() {
   return (
     <main className="app">
-      <TituloSeccion texto="Jael Yapur CH" />
-
-      <p>Diseño y Desarrollo Web</p>
-
-      <ImagenPerfil imagen={fotoPerfil} alt="Fotografía de Jael Yapur CH" />
-
-      <BotonEnlace texto="Ver proyectos" enlace="#proyectos" />
+      <SeccionPersonal perfil={perfil} />
 
       <SeccionExperiencia experiencias={experiencias} />
 

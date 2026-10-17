@@ -1,17 +1,36 @@
 import { Typography } from "antd";
+import { CalendarOutlined } from "@ant-design/icons";
 
-const { Title, Text } = Typography;
+const { Title, Text, Paragraph } = Typography;
 
-function ItemExperiencia({ empresa, cargo, fechaInicio, fechaTermino }) {
+function ItemExperiencia({
+  cargo,
+  empresa,
+  fechaInicio,
+  fechaTermino,
+  descripcion,
+}) {
   return (
     <article className="item-experiencia">
-      <Title level={4}>{cargo}</Title>
+      <div className="cabecera-experiencia">
+        <div>
+          <Title level={4} className="cargo-experiencia">
+            {cargo}
+          </Title>
 
-      <Text strong>{empresa}</Text>
+          <Text className="empresa-experiencia">{empresa}</Text>
+        </div>
 
-      <Text>
-        {fechaInicio} - {fechaTermino}
-      </Text>
+        <div className="fecha-experiencia">
+          <CalendarOutlined />
+
+          <span>
+            {fechaInicio} - {fechaTermino}
+          </span>
+        </div>
+      </div>
+
+      <Paragraph className="descripcion-experiencia">{descripcion}</Paragraph>
     </article>
   );
 }
