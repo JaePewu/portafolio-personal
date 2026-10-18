@@ -2,31 +2,507 @@
   min-height: 100vh;
 }
 
+/********** PORTADA **********/
+.portada {
+  min-height: 100vh;
+  background-image: url("./assets/images/fondo-portada.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .app {
   min-height: 100vh;
   padding: 40px;
 }
 
+/********** TITULOS DE SECCION **********/
 .titulo-seccion {
   font-family: "Playfair Display", serif !important;
+  font-weight: 600 !important;
   color: var(--color-cafe) !important;
+}
+
+/* ::after crea la línea terracota */
+.titulo-seccion::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 12px;
+  background-color: var(--color-terracota);
 }
 
 /********** BOTON ENLACE **********/
 .boton-enlace {
   height: 42px;
   padding: 0 24px;
-
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-
   background-color: var(--color-terracota) !important;
   border-color: var(--color-terracota) !important;
-
   border-radius: 24px;
 }
 
 .boton-enlace:hover {
   background-color: var(--color-naranja) !important;
   border-color: var(--color-naranja) !important;
+}
+
+/********** IMAGEN PERFIL **********/
+.imagen-perfil {
+  width: 100%;
+  max-width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/********** COLUMNAS DE TARJETAS **********/
+.columna-tarjeta {
+  display: flex;
+}
+
+/********** ITEM EXPERIENCIA **********/
+.item-experiencia {
+  width: 100%;
+  min-height: 210px;
+  padding: 20px;
+  background-color: var(--color-beige);
+  border: none;
+  border-radius: 12px;
+}
+
+.cabecera-experiencia {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cabecera-experiencia > div:first-child {
+  flex: 1;
+  min-width: 220px;
+}
+
+.cargo-experiencia {
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--color-cafe) !important;
+}
+
+.empresa-experiencia {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-terracota) !important;
+}
+
+.fecha-experiencia {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 8px 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: var(--color-terracota);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-terracota);
+  border-radius: 20px;
+}
+
+.descripcion-experiencia {
+  margin-top: 14px;
+  margin-bottom: 0 !important;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--color-cafe) !important;
+}
+
+/********** ITEM ESTUDIO **********/
+.item-estudio {
+  width: 100%;
+  min-height: 150px;
+  padding: 20px;
+  background-color: var(--color-beige);
+  border-radius: 12px;
+}
+
+.cabecera-estudio {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cabecera-estudio > div:first-child {
+  flex: 1;
+  min-width: 220px;
+}
+
+.titulo-estudio {
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--color-cafe) !important;
+}
+
+.institucion-estudio {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-terracota) !important;
+}
+
+.fecha-estudio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 8px 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: var(--color-terracota);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-terracota);
+  border-radius: 20px;
+}
+
+/********** TARJETA PROYECTO **********/
+.tarjeta-proyecto {
+  width: 100%;
+  min-height: 260px;
+  height: 100%;
+  background-color: var(--color-beige);
+  border: none;
+  border-radius: 16px;
+}
+
+.tarjeta-proyecto .ant-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.titulo-proyecto {
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--color-cafe) !important;
+}
+
+.descripcion-proyecto {
+  font-family: "Inter", sans-serif;
+  color: var(--color-cafe) !important;
+}
+
+.tecnologias-proyecto {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: var(--color-verde);
+}
+
+/********** SECCIONES **********/
+.seccion-sobre-mi,
+.seccion-experiencia,
+.seccion-estudios,
+.seccion-proyectos {
+  padding: 60px 0;
+}
+
+.seccion-sobre-mi,
+.seccion-experiencia,
+.seccion-estudios,
+.seccion-proyectos,
+.seccion-contacto {
+  padding: 60px 0;
+}
+
+/********** NAVBAR **********/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 18px 40px;
+  background-color: transparent;
+}
+
+.navbar-nombre {
+  flex-shrink: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-crema);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  flex: 1;
+  justify-content: flex-end;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item {
+  color: var(--color-crema) !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item a {
+  /* > selecciona al hijo directo */
+  color: var(--color-crema) !important;
+}
+
+/* Hover */
+.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover,
+.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover a {
+  color: var(--color-naranja) !important;
+}
+
+/* Opción seleccionada */
+.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected,
+.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected a {
+  color: var(--color-naranja) !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected::after {
+  /* ::after controla la línea inferior del menú */
+  border-bottom-color: var(--color-naranja) !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover::after {
+  border-bottom-color: var(--color-naranja) !important;
+}
+
+/********** SECCION PERSONAL **********/
+.seccion-personal {
+  padding: 120px 40px 100px;
+}
+
+.contenido-personal {
+  max-width: 760px;
+}
+
+.etiqueta-personal {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--color-naranja) !important;
+}
+
+.titulo-principal {
+  margin-top: 14px !important;
+  margin-bottom: 20px !important;
+  max-width: 760px;
+  font-family: "Playfair Display", serif !important;
+  font-size: 72px !important;
+  line-height: 1.05 !important;
+  color: var(--color-crema) !important;
+}
+
+.titulo-destacado {
+  color: var(--color-naranja);
+}
+
+.descripcion-personal {
+  max-width: 540px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-crema) !important;
+}
+
+.acciones-personales {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+/********** SECCION SOBRE MI **********/
+.bloque-imagen-sobre-mi {
+  width: 100%;
+}
+
+.contenido-sobre-mi {
+  max-width: 560px;
+}
+
+.descripcion-sobre-mi {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-cafe) !important;
+}
+
+/********** SECCION CONTACTO **********/
+.contenedor-contacto {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.descripcion-contacto {
+  margin-bottom: 32px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-cafe);
+}
+
+/********** INFORMACION CONTACTO **********/
+.informacion-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 20px;
+}
+
+.dato-contacto {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: var(--color-cafe);
+  text-decoration: none;
+}
+
+.dato-contacto .anticon {
+  font-size: 22px;
+  color: var(--color-terracota);
+}
+
+a.dato-contacto:hover {
+  color: var(--color-terracota);
+}
+
+/********** REDES SOCIALES **********/
+.redes-contacto {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.redes-contacto a {
+  font-size: 26px;
+  color: var(--color-cafe);
+}
+
+.redes-contacto a:hover {
+  color: var(--color-terracota);
+}
+
+/********** TARJETA CONTACTO **********/
+.tarjeta-contacto {
+  padding: 28px;
+  background-color: #fff;
+  border: 1px solid var(--color-beige);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(62, 39, 35, 0.08);
+}
+
+/********** FORMULARIO CONTACTO **********/
+.formulario-contacto {
+  font-family: "Poppins", sans-serif;
+}
+
+.formulario-contacto .ant-form-item {
+  margin-bottom: 14px;
+}
+
+.formulario-contacto .ant-input {
+  padding: 12px 14px;
+  font-family: "Inter", sans-serif;
+  color: var(--color-cafe);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-beige);
+  border-radius: 10px;
+}
+
+.formulario-contacto .ant-input:hover {
+  border-color: var(--color-terracota);
+}
+
+.formulario-contacto .ant-input:focus,
+.formulario-contacto .ant-input-focused {
+  border-color: var(--color-terracota);
+  box-shadow: 0 0 0 2px rgba(181, 82, 45, 0.12);
+}
+
+/********** BOTON CONTACTO **********/
+.formulario-contacto .contenedor-boton-contacto {
+  margin-bottom: 0;
+}
+
+.formulario-contacto .boton-contacto {
+  width: 100%;
+  height: 46px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: white;
+  background-color: var(--color-terracota) !important;
+  border-color: var(--color-terracota) !important;
+  border-radius: 24px;
+  box-shadow: none;
+}
+
+.formulario-contacto .boton-contacto:hover {
+  background-color: var(--color-naranja) !important;
+  border-color: var(--color-naranja) !important;
+}
+
+/********** MEDIA QUERIES **********/
+@media (max-width: 992px) {
+  .titulo-principal {
+    font-size: 56px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .app {
+    padding: 24px;
+  }
+
+  .navbar {
+    padding: 16px 24px;
+  }
+
+  .navbar-nombre {
+    font-size: 18px;
+  }
+
+  .seccion-personal {
+    padding: 80px 24px 70px;
+  }
+
+  .cabecera-experiencia,
+  .cabecera-estudio {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .fecha-experiencia,
+  .fecha-estudio {
+    margin-left: 0;
+  }
+
+  .titulo-principal {
+    font-size: 40px !important;
+  }
+
+  .descripcion-sobre-mi {
+    font-size: 16px;
+  }
 }
