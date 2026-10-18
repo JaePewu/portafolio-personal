@@ -13,7 +13,7 @@ function SeccionProyectos({ proyectos }) {
           <Col
             xs={24}
             lg={12}
-            xl={8}
+            xl={proyectos.length === 1 ? 12 : 8}
             key={proyecto.id}
             className="columna-tarjeta"
           >
@@ -21,6 +21,8 @@ function SeccionProyectos({ proyectos }) {
               titulo={proyecto.titulo}
               descripcion={proyecto.descripcion}
               tecnologias={proyecto.tecnologias}
+              imagen={proyecto.imagen}
+              sitio={proyecto.sitio}
               repositorio={proyecto.repositorio}
             />
           </Col>

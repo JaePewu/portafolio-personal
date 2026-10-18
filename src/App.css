@@ -181,8 +181,8 @@
 /********** TARJETA PROYECTO **********/
 .tarjeta-proyecto {
   width: 100%;
-  min-height: 260px;
   height: 100%;
+  overflow: hidden;
   background-color: var(--color-beige);
   border: none;
   border-radius: 16px;
@@ -192,7 +192,35 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  height: 100%;
+  min-height: 250px;
+}
+
+/* Portada temporal */
+.portada-proyecto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  height: 190px;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-crema);
+  background: linear-gradient(
+    135deg,
+    var(--color-cafe),
+    var(--color-terracota)
+  );
+}
+
+.portada-proyecto .anticon {
+  font-size: 42px;
+}
+
+/* Imagen del proyecto ¿?*/
+.imagen-proyecto {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
 }
 
 .titulo-proyecto {
@@ -203,14 +231,35 @@
 }
 
 .descripcion-proyecto {
+  margin: 0 !important;
   font-family: "Inter", sans-serif;
+  line-height: 1.6;
   color: var(--color-cafe) !important;
 }
 
-.tecnologias-proyecto {
+/* Tecnologías */
+.etiquetas-proyecto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.etiqueta-tecnologia {
+  margin: 0;
+  padding: 4px 10px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-size: 12px;
   color: var(--color-verde);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-beige);
+  border-radius: 20px;
+}
+
+.enlaces-proyecto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
 }
 
 /********** SECCIONES **********/
