@@ -463,6 +463,19 @@ a.dato-contacto:hover {
   border-color: var(--color-naranja) !important;
 }
 
+/********** MENSAJE CONTACTO **********/
+.mensaje-contacto {
+  margin-top: 16px;
+  padding: 12px 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-verde);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-verde);
+  border-radius: 10px;
+}
+
 /********** MEDIA QUERIES **********/
 @media (max-width: 992px) {
   .titulo-principal {
