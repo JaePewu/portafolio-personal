@@ -476,6 +476,167 @@ a.dato-contacto:hover {
   border-radius: 10px;
 }
 
+/********** FOOTER **********/
+.footer-portafolio {
+  background-image:
+    linear-gradient(rgba(46, 27, 20, 0.82), rgba(46, 27, 20, 0.82)),
+    url("./assets/images/fondo-portada.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-crema);
+}
+
+.footer-overlay {
+  padding: 48px 40px 28px;
+}
+
+.footer-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(249, 245, 237, 0.15);
+}
+
+.footer-marca {
+  max-width: 430px;
+}
+
+.footer-nombre {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--color-crema);
+}
+
+.footer-etiqueta {
+  margin: 0 0 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--color-naranja);
+}
+
+.footer-texto {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  color: rgba(249, 245, 237, 0.88);
+}
+
+.footer-cta {
+  max-width: 360px;
+  text-align: left;
+}
+
+.footer-cta-titulo {
+  margin: 0 0 20px;
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  line-height: 1.2;
+  color: var(--color-crema);
+}
+
+.footer-cta-titulo span {
+  color: var(--color-naranja);
+  font-style: italic;
+}
+
+.footer-boton-contacto {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--color-crema);
+  background-color: var(--color-terracota);
+  border-radius: 24px;
+}
+
+.footer-boton-contacto:hover {
+  background-color: var(--color-naranja);
+  color: var(--color-crema);
+}
+
+.footer-inferior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 22px;
+}
+
+.footer-contacto {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  color: rgba(249, 245, 237, 0.88);
+}
+
+.footer-link:hover {
+  color: var(--color-naranja);
+}
+
+.footer-icono {
+  font-size: 20px;
+  color: rgba(249, 245, 237, 0.88);
+}
+
+.footer-icono:hover {
+  color: var(--color-naranja);
+}
+
+.footer-copy {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: rgba(249, 245, 237, 0.75);
+}
+
+/* Florcita decorativa */
+.footer-flor {
+  margin-left: 6px;
+  font-size: 16px;
+  color: var(--color-naranja);
+}
+
+.footer-volver-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  text-decoration: none;
+  color: var(--color-crema);
+  background-color: rgba(249, 245, 237, 0.14);
+  border: 1px solid rgba(249, 245, 237, 0.25);
+  border-radius: 50%;
+}
+
+.footer-volver-icono:hover {
+  background-color: var(--color-terracota);
+  color: var(--color-crema);
+}
+
 /********** MEDIA QUERIES **********/
 @media (max-width: 992px) {
   .titulo-principal {
@@ -517,5 +678,31 @@ a.dato-contacto:hover {
 
   .descripcion-sobre-mi {
     font-size: 16px;
+  }
+
+  .footer-overlay {
+    padding: 32px 24px 24px;
+  }
+
+  .footer-superior {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-nombre {
+    font-size: 28px;
+  }
+
+  .footer-cta-titulo {
+    font-size: 28px;
+  }
+
+  .footer-inferior {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-contacto {
+    gap: 14px;
   }
 }

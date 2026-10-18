@@ -5,13 +5,13 @@ import SeccionExperiencia from "../organisms/SeccionExperiencia";
 import SeccionEstudios from "../organisms/SeccionEstudios";
 import SeccionProyectos from "../organisms/SeccionProyectos";
 import SeccionContacto from "../organisms/SeccionContacto";
+import Footer from "../organisms/Footer";
 
 function PortafolioTemplate({ perfil, experiencias, estudios, proyectos }) {
   return (
     <>
       <header className="portada">
         <Navbar />
-
         <SeccionPersonal perfil={perfil} />
       </header>
 
@@ -26,6 +26,8 @@ function PortafolioTemplate({ perfil, experiencias, estudios, proyectos }) {
 
         <SeccionContacto />
       </main>
+
+      <Footer />
     </>
   );
 }

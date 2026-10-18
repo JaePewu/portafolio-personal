@@ -1,0 +1,88 @@
+import {
+  ArrowUpOutlined,
+  MailOutlined,
+  LinkedinOutlined,
+  GithubOutlined,
+} from "@ant-design/icons";
+
+function Footer() {
+  const anioActual = new Date().getFullYear();
+
+  return (
+    <footer className="footer-portafolio">
+      <div className="footer-overlay">
+        <div className="footer-superior">
+          <div className="footer-marca">
+            <h3 className="footer-nombre">Jael Yapur CH</h3>
+            <p className="footer-etiqueta">PORTAFOLIO PERSONAL</p>
+            <p className="footer-texto">
+              Diseño, creatividad y soluciones digitales con identidad visual
+              cálida y funcional.
+            </p>
+          </div>
+
+          <div className="footer-cta">
+            <p className="footer-cta-titulo">
+              Hablemos de tu <span>próximo proyecto.</span>
+            </p>
+
+            <a href="#contacto" className="footer-boton-contacto">
+              Contactar
+            </a>
+          </div>
+        </div>
+
+        <div className="footer-inferior">
+          <div className="footer-contacto">
+            <a
+              href="mailto:jael.yapur.ch@gmail.com"
+              className="footer-icono"
+              aria-label="Enviar correo electrónico"
+              title="Enviar correo"
+            >
+              <MailOutlined />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/jael-yapur-ch/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-icono"
+              aria-label="LinkedIn"
+            >
+              <LinkedinOutlined />
+            </a>
+
+            <a
+              href="https://github.com/JaePewu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-icono"
+              aria-label="GitHub"
+            >
+              <GithubOutlined />
+            </a>
+          </div>
+
+          <p className="footer-copy">
+            © {anioActual} - Desarrollado por Jae
+            <span className="footer-flor" aria-hidden="true">
+              ✿
+            </span>
+          </p>
+
+          <a
+            href="#inicio"
+            className="footer-volver-icono"
+            aria-label="Volver al inicio"
+            title="Volver al inicio"
+          >
+            <ArrowUpOutlined />
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
