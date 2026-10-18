@@ -42,14 +42,21 @@
 /********** IMAGEN PERFIL **********/
 .imagen-perfil {
   width: 100%;
-  max-width: 360px;
-  height: 440px;
+  max-width: 100%;
+  height: 320px;
   object-fit: cover;
   border-radius: 20px;
 }
 
+/********** COLUMNAS DE TARJETAS **********/
+.columna-tarjeta {
+  display: flex;
+}
+
 /********** ITEM EXPERIENCIA **********/
 .item-experiencia {
+  width: 100%;
+  min-height: 210px;
   padding: 20px;
   background-color: var(--color-beige);
   border: none;
@@ -60,7 +67,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.cabecera-experiencia > div:first-child {
+  flex: 1;
+  min-width: 220px;
 }
 
 .cargo-experiencia {
@@ -84,6 +97,7 @@
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
+  margin-left: auto;
   padding: 8px 12px;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -103,6 +117,8 @@
 
 /********** ITEM ESTUDIO **********/
 .item-estudio {
+  width: 100%;
+  min-height: 150px;
   padding: 20px;
   background-color: var(--color-beige);
   border-radius: 12px;
@@ -112,7 +128,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.cabecera-estudio > div:first-child {
+  flex: 1;
+  min-width: 220px;
 }
 
 .titulo-estudio {
@@ -136,6 +158,7 @@
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
+  margin-left: auto;
   padding: 8px 12px;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -147,11 +170,19 @@
 
 /********** TARJETA PROYECTO **********/
 .tarjeta-proyecto {
-  max-width: 360px;
+  width: 100%;
+  min-height: 260px;
   height: 100%;
   background-color: var(--color-beige);
   border: none;
   border-radius: 16px;
+}
+
+.tarjeta-proyecto .ant-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
 }
 
 .titulo-proyecto {
@@ -173,6 +204,7 @@
 }
 
 /********** SECCIONES **********/
+.seccion-sobre-mi,
 .seccion-experiencia,
 .seccion-estudios,
 .seccion-proyectos {
@@ -206,21 +238,43 @@
   border-bottom: none !important;
 }
 
-.navbar-menu a {
-  color: var(--color-crema);
+.navbar-menu.ant-menu-horizontal > .ant-menu-item {
+  color: var(--color-crema) !important;
 }
 
-.navbar-menu a:hover {
-  color: var(--color-naranja);
+.navbar-menu.ant-menu-horizontal > .ant-menu-item a {
+  /* > selecciona al hijo directo */
+  color: var(--color-crema) !important;
+}
+
+/* Hover */
+.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover,
+.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover a {
+  color: var(--color-naranja) !important;
+}
+
+/* Opción seleccionada */
+.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected,
+.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected a {
+  color: var(--color-naranja) !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected::after {
+  /* ::after controla la línea inferior del menú */
+  border-bottom-color: var(--color-naranja) !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover::after {
+  border-bottom-color: var(--color-naranja) !important;
 }
 
 /********** SECCION PERSONAL **********/
 .seccion-personal {
-  padding: 80px 40px 60px;
+  padding: 120px 40px 100px;
 }
 
 .contenido-personal {
-  max-width: 620px;
+  max-width: 760px;
 }
 
 .etiqueta-personal {
@@ -231,19 +285,18 @@
   color: var(--color-naranja) !important;
 }
 
-.nombre-personal {
-  margin-top: 10px !important;
-  margin-bottom: 10px !important;
+.titulo-principal {
+  margin-top: 14px !important;
+  margin-bottom: 20px !important;
+  max-width: 760px;
   font-family: "Playfair Display", serif !important;
+  font-size: 72px !important;
+  line-height: 1.05 !important;
   color: var(--color-crema) !important;
 }
 
-.titulo-principal {
-  margin-top: 0 !important;
-  font-family: "Playfair Display", serif !important;
-  font-size: 48px !important;
-  line-height: 1.1 !important;
-  color: var(--color-crema) !important;
+.titulo-destacado {
+  color: var(--color-naranja);
 }
 
 .descripcion-personal {
@@ -254,12 +307,35 @@
   color: var(--color-crema) !important;
 }
 
-.contenedor-imagen-personal {
+.acciones-personales {
+  margin-top: 24px;
   display: flex;
-  justify-content: center;
+  gap: 16px;
+}
+
+/********** SECCION SOBRE MI **********/
+.bloque-imagen-sobre-mi {
+  width: 100%;
+}
+
+.contenido-sobre-mi {
+  max-width: 560px;
+}
+
+.descripcion-sobre-mi {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-cafe) !important;
 }
 
 /********** MEDIA QUERIES **********/
+@media (max-width: 992px) {
+  .titulo-principal {
+    font-size: 56px !important;
+  }
+}
+
 @media (max-width: 576px) {
   .app {
     padding: 24px;
@@ -273,12 +349,26 @@
     font-size: 18px;
   }
 
+  .seccion-personal {
+    padding: 80px 24px 70px;
+  }
+
   .cabecera-experiencia,
   .cabecera-estudio {
     flex-direction: column;
+    gap: 12px;
+  }
+
+  .fecha-experiencia,
+  .fecha-estudio {
+    margin-left: 0;
   }
 
   .titulo-principal {
-    font-size: 38px !important;
+    font-size: 40px !important;
+  }
+
+  .descripcion-sobre-mi {
+    font-size: 16px;
   }
 }

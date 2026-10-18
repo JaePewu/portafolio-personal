@@ -10,7 +10,13 @@ function SeccionEstudios({ estudios }) {
 
       <Row gutter={[24, 24]}>
         {estudios.map((estudio) => (
-          <Col xs={24} md={12} lg={8} key={estudio.id}>
+          <Col
+            xs={24}
+            lg={12}
+            xl={8}
+            key={estudio.id}
+            className="columna-tarjeta"
+          >
             <ItemEstudio
               institucion={estudio.institucion}
               estudio={estudio.estudio}

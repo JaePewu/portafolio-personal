@@ -6,6 +6,10 @@ const items = [
     label: <a href="#inicio">Inicio</a>,
   },
   {
+    key: "sobre-mi",
+    label: <a href="#sobre-mi">Sobre mí</a>,
+  },
+  {
     key: "experiencia",
     label: <a href="#experiencia">Experiencia</a>,
   },
