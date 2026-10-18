@@ -637,10 +637,77 @@ a.dato-contacto:hover {
   color: var(--color-crema);
 }
 
+/********** NAVBAR MOVIL **********/
+.navbar-boton-movil {
+  display: none !important;
+  color: var(--color-crema) !important;
+  font-size: 22px;
+}
+
+.navbar-boton-movil:hover {
+  color: var(--color-naranja) !important;
+  background-color: rgba(249, 245, 237, 0.1) !important;
+}
+
+/* Panel lateral */
+.navbar-drawer .ant-drawer-content,
+.navbar-drawer .ant-drawer-header,
+.navbar-drawer .ant-drawer-body {
+  background-color: var(--color-cafe);
+}
+
+.navbar-drawer .ant-drawer-header {
+  border-bottom: 1px solid rgba(249, 245, 237, 0.15);
+}
+
+.navbar-drawer .ant-drawer-title,
+.navbar-drawer .ant-drawer-close {
+  color: var(--color-crema);
+}
+
+/* Opciones del menú */
+.navbar-menu-movil {
+  font-family: "Poppins", sans-serif;
+  background-color: transparent !important;
+  border-inline-end: none !important;
+}
+
+.navbar-menu-movil .ant-menu-item {
+  color: var(--color-crema) !important;
+}
+
+.navbar-menu-movil .ant-menu-item a {
+  color: inherit !important;
+}
+
+.navbar-menu-movil .ant-menu-item:hover {
+  color: var(--color-naranja) !important;
+  background-color: rgba(217, 119, 69, 0.1) !important;
+}
+
+.navbar-menu-movil .ant-menu-item-selected {
+  color: var(--color-naranja) !important;
+  background-color: rgba(217, 119, 69, 0.2) !important;
+}
+
 /********** MEDIA QUERIES **********/
 @media (max-width: 992px) {
   .titulo-principal {
     font-size: 56px !important;
+  }
+
+  .navbar {
+    padding: 18px 32px;
+  }
+
+  .navbar-menu {
+    display: none !important;
+  }
+
+  .navbar-boton-movil {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
   }
 }
 
