@@ -21,6 +21,10 @@ const items = [
     key: "proyectos",
     label: <a href="#proyectos">Proyectos</a>,
   },
+  {
+    key: "contacto",
+    label: <a href="#contacto">Contacto</a>,
+  },
 ];
 
 function Navbar() {
