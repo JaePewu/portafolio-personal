@@ -1,24 +1,36 @@
 import {
-  ArrowUpOutlined,
   MailOutlined,
   LinkedinOutlined,
   GithubOutlined,
 } from "@ant-design/icons";
 
-function Footer() {
-  const anioActual = new Date().getFullYear();
+import { Avatar } from "antd";
 
+const anioActual = new Date().getFullYear();
+
+function Footer() {
   return (
     <footer className="footer-portafolio">
       <div className="footer-overlay">
         <div className="footer-superior">
           <div className="footer-marca">
-            <h3 className="footer-nombre">Jael Yapur CH</h3>
-            <p className="footer-etiqueta">PORTAFOLIO PERSONAL</p>
-            <p className="footer-texto">
-              Diseño, creatividad y soluciones digitales con identidad visual
-              cálida y funcional.
-            </p>
+            <div className="footer-marca-superior">
+              <Avatar
+                src="/avatar_jae.png"
+                size={96}
+                className="footer-avatar"
+                alt="Avatar ilustrado de Jae"
+              />
+
+              <div className="footer-marca-texto">
+                <h3 className="footer-nombre">Jael Yapur CH</h3>
+                <p className="footer-etiqueta">PORTAFOLIO PERSONAL</p>
+                <p className="footer-texto">
+                  Diseño, creatividad y soluciones digitales con identidad
+                  visual cálida y funcional.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="footer-cta">
@@ -70,15 +82,6 @@ function Footer() {
               ✿
             </span>
           </p>
-
-          <a
-            href="#inicio"
-            className="footer-volver-icono"
-            aria-label="Volver al inicio"
-            title="Volver al inicio"
-          >
-            <ArrowUpOutlined />
-          </a>
         </div>
       </div>
     </footer>

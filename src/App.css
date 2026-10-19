@@ -1,5 +1,11 @@
 #root {
+  /*min-height: 100vh;*/
+  --margen-lateral: clamp(24px, 8vw, 120px);
+}
+
+.app {
   min-height: 100vh;
+  padding: 40px var(--margen-lateral);
 }
 
 /********** PORTADA **********/
@@ -11,9 +17,168 @@
   background-repeat: no-repeat;
 }
 
-.app {
-  min-height: 100vh;
-  padding: 40px;
+/********** NAVBAR **********/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 18px var(--margen-lateral);
+  background-color: transparent;
+}
+
+.navbar-nombre {
+  flex-shrink: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-crema);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  flex: 1;
+  justify-content: flex-end;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item {
+  color: var(--color-crema) !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item a {
+  /* > selecciona al hijo directo */
+  color: var(--color-crema) !important;
+}
+
+/* Hover */
+.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover,
+.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover a {
+  color: var(--color-naranja) !important;
+}
+
+/* Opción seleccionada */
+.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected,
+.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected a {
+  color: var(--color-naranja) !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected::after {
+  /* ::after controla la línea inferior del menú */
+  border-bottom-color: var(--color-naranja) !important;
+}
+
+.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover::after {
+  border-bottom-color: var(--color-naranja) !important;
+}
+
+/********** NAVBAR MOVIL **********/
+.navbar-boton-movil {
+  display: none !important;
+  color: var(--color-crema) !important;
+  font-size: 22px;
+}
+
+.navbar-boton-movil:hover {
+  color: var(--color-naranja) !important;
+  background-color: rgba(249, 245, 237, 0.1) !important;
+}
+
+/* Panel lateral */
+.navbar-drawer .ant-drawer-content,
+.navbar-drawer .ant-drawer-header,
+.navbar-drawer .ant-drawer-body {
+  background-color: var(--color-cafe);
+}
+
+.navbar-drawer .ant-drawer-header {
+  border-bottom: 1px solid rgba(249, 245, 237, 0.15);
+}
+
+.navbar-drawer .ant-drawer-title,
+.navbar-drawer .ant-drawer-close {
+  color: var(--color-crema);
+}
+
+/* Opciones del menú */
+.navbar-menu-movil {
+  font-family: "Poppins", sans-serif;
+  background-color: transparent !important;
+  border-inline-end: none !important;
+}
+
+.navbar-menu-movil .ant-menu-item {
+  color: var(--color-crema) !important;
+}
+
+.navbar-menu-movil .ant-menu-item a {
+  color: inherit !important;
+}
+
+.navbar-menu-movil .ant-menu-item:hover {
+  color: var(--color-naranja) !important;
+  background-color: rgba(217, 119, 69, 0.1) !important;
+}
+
+.navbar-menu-movil .ant-menu-item-selected {
+  color: var(--color-naranja) !important;
+  background-color: rgba(217, 119, 69, 0.2) !important;
+}
+
+/********** SECCION PERSONAL **********/
+.seccion-personal {
+  padding: 120px var(--margen-lateral) 100px;
+}
+
+.contenido-personal {
+  max-width: 760px;
+}
+
+.etiqueta-personal {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--color-naranja) !important;
+}
+
+.titulo-principal {
+  margin-top: 14px !important;
+  margin-bottom: 20px !important;
+  max-width: 760px;
+  font-family: "Playfair Display", serif !important;
+  font-size: 72px !important;
+  line-height: 1.05 !important;
+  color: var(--color-crema) !important;
+}
+
+.titulo-destacado {
+  color: var(--color-naranja);
+}
+
+.descripcion-personal {
+  max-width: 540px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-crema) !important;
+}
+
+.acciones-personales {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+/********** SECCIONES **********/
+.seccion-sobre-mi,
+.seccion-experiencia,
+.seccion-estudios,
+.seccion-proyectos,
+.seccion-contacto {
+  padding: 60px 0;
 }
 
 /********** TITULOS DE SECCION **********/
@@ -33,22 +198,6 @@
   background-color: var(--color-terracota);
 }
 
-/********** BOTON ENLACE **********/
-.boton-enlace {
-  height: 42px;
-  padding: 0 24px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  background-color: var(--color-terracota) !important;
-  border-color: var(--color-terracota) !important;
-  border-radius: 24px;
-}
-
-.boton-enlace:hover {
-  background-color: var(--color-naranja) !important;
-  border-color: var(--color-naranja) !important;
-}
-
 /********** IMAGEN PERFIL **********/
 .imagen-perfil {
   width: 100%;
@@ -56,6 +205,52 @@
   height: 320px;
   object-fit: cover;
   border-radius: 20px;
+}
+
+.imagen-perfil-redonda {
+  flex-shrink: 0;
+  border: 6px solid var(--color-beige);
+  outline: 3px solid var(--color-naranja);
+  outline-offset: 3px;
+  box-shadow: 0 10px 28px rgba(62, 39, 35, 0.18);
+}
+
+.imagen-perfil-redonda img,
+.imagen-perfil-redonda .ant-avatar-img {
+  object-fit: cover;
+}
+
+.bloque-imagen-sobre-mi .ant-avatar {
+  display: block;
+  width: min(100%, 340px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.bloque-imagen-sobre-mi .ant-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/********** SECCION SOBRE MI **********/
+.bloque-imagen-sobre-mi {
+  width: 100%;
+}
+
+.contenido-sobre-mi {
+  max-width: 560px;
+}
+
+.descripcion-sobre-mi {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-cafe) !important;
 }
 
 /********** COLUMNAS DE TARJETAS **********/
@@ -181,8 +376,8 @@
 /********** TARJETA PROYECTO **********/
 .tarjeta-proyecto {
   width: 100%;
-  min-height: 260px;
   height: 100%;
+  overflow: hidden;
   background-color: var(--color-beige);
   border: none;
   border-radius: 16px;
@@ -192,7 +387,36 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  height: 100%;
+  min-height: 250px;
+}
+
+.portada-proyecto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  height: 190px;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-crema);
+  background: linear-gradient(
+    135deg,
+    var(--color-cafe),
+    var(--color-terracota)
+  );
+}
+
+.portada-proyecto .anticon {
+  font-size: 42px;
+}
+
+/* Imagen del proyecto*/
+.imagen-proyecto {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .titulo-proyecto {
@@ -203,153 +427,57 @@
 }
 
 .descripcion-proyecto {
+  margin: 0 !important;
   font-family: "Inter", sans-serif;
+  line-height: 1.6;
   color: var(--color-cafe) !important;
 }
 
-.tecnologias-proyecto {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  color: var(--color-verde);
-}
-
-/********** SECCIONES **********/
-.seccion-sobre-mi,
-.seccion-experiencia,
-.seccion-estudios,
-.seccion-proyectos {
-  padding: 60px 0;
-}
-
-.seccion-sobre-mi,
-.seccion-experiencia,
-.seccion-estudios,
-.seccion-proyectos,
-.seccion-contacto {
-  padding: 60px 0;
-}
-
-/********** NAVBAR **********/
-.navbar {
+/* Tecnologías */
+.etiquetas-proyecto {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  padding: 18px 40px;
-  background-color: transparent;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.navbar-nombre {
-  flex-shrink: 0;
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--color-crema);
-  text-decoration: none;
-}
-
-.navbar-menu {
-  flex: 1;
-  justify-content: flex-end;
-  font-family: "Poppins", sans-serif;
-  background-color: transparent !important;
-  border-bottom: none !important;
-}
-
-.navbar-menu.ant-menu-horizontal > .ant-menu-item {
-  color: var(--color-crema) !important;
-}
-
-.navbar-menu.ant-menu-horizontal > .ant-menu-item a {
-  /* > selecciona al hijo directo */
-  color: var(--color-crema) !important;
-}
-
-/* Hover */
-.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover,
-.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover a {
-  color: var(--color-naranja) !important;
-}
-
-/* Opción seleccionada */
-.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected,
-.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected a {
-  color: var(--color-naranja) !important;
-}
-
-.navbar-menu.ant-menu-horizontal > .ant-menu-item-selected::after {
-  /* ::after controla la línea inferior del menú */
-  border-bottom-color: var(--color-naranja) !important;
-}
-
-.navbar-menu.ant-menu-horizontal > .ant-menu-item:hover::after {
-  border-bottom-color: var(--color-naranja) !important;
-}
-
-/********** SECCION PERSONAL **********/
-.seccion-personal {
-  padding: 120px 40px 100px;
-}
-
-.contenido-personal {
-  max-width: 760px;
-}
-
-.etiqueta-personal {
+.etiqueta-tecnologia {
+  margin: 0;
+  padding: 4px 10px;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 4px;
-  color: var(--color-naranja) !important;
+  color: var(--color-verde);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-beige);
+  border-radius: 20px;
 }
 
-.titulo-principal {
-  margin-top: 14px !important;
-  margin-bottom: 20px !important;
-  max-width: 760px;
-  font-family: "Playfair Display", serif !important;
-  font-size: 72px !important;
-  line-height: 1.05 !important;
-  color: var(--color-crema) !important;
-}
-
-.titulo-destacado {
-  color: var(--color-naranja);
-}
-
-.descripcion-personal {
-  max-width: 540px;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--color-crema) !important;
-}
-
-.acciones-personales {
-  margin-top: 24px;
+.enlaces-proyecto {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
 }
 
-/********** SECCION SOBRE MI **********/
-.bloque-imagen-sobre-mi {
-  width: 100%;
+/********** BOTON ENLACE **********/
+.boton-enlace {
+  height: 42px;
+  padding: 0 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background-color: var(--color-terracota) !important;
+  border-color: var(--color-terracota) !important;
+  border-radius: 24px;
 }
 
-.contenido-sobre-mi {
-  max-width: 560px;
-}
-
-.descripcion-sobre-mi {
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  line-height: 1.8;
-  color: var(--color-cafe) !important;
+.boton-enlace:hover {
+  background-color: var(--color-naranja) !important;
+  border-color: var(--color-naranja) !important;
 }
 
 /********** SECCION CONTACTO **********/
 .contenedor-contacto {
-  max-width: 1100px;
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -477,6 +605,24 @@ a.dato-contacto:hover {
 }
 
 /********** FOOTER **********/
+.footer-marca-superior {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-marca-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-avatar {
+  flex-shrink: 0;
+  border: 3px solid var(--color-terracota);
+  box-shadow: 0 0 0 3px var(--color-naranja);
+}
+
 .footer-portafolio {
   background-image:
     linear-gradient(rgba(46, 27, 20, 0.82), rgba(46, 27, 20, 0.82)),
@@ -488,7 +634,7 @@ a.dato-contacto:hover {
 }
 
 .footer-overlay {
-  padding: 48px 40px 28px;
+  padding: 48px var(--margen-lateral) 28px;
 }
 
 .footer-superior {
@@ -619,38 +765,137 @@ a.dato-contacto:hover {
   color: var(--color-naranja);
 }
 
-.footer-volver-icono {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  text-decoration: none;
-  color: var(--color-crema);
-  background-color: rgba(249, 245, 237, 0.14);
-  border: 1px solid rgba(249, 245, 237, 0.25);
-  border-radius: 50%;
-}
-
-.footer-volver-icono:hover {
-  background-color: var(--color-terracota);
-  color: var(--color-crema);
-}
-
 /********** MEDIA QUERIES **********/
 @media (max-width: 992px) {
+  /* PORTADA Y NAVBAR */
   .titulo-principal {
     font-size: 56px !important;
+  }
+
+  .navbar {
+    padding: 18px var(--margen-lateral);
+  }
+
+  .navbar-menu {
+    display: none !important;
+  }
+
+  .navbar-boton-movil {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* SOBRE MI */
+  .contenido-sobre-mi {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .seccion-sobre-mi .titulo-seccion {
+    text-align: center;
+  }
+
+  .seccion-sobre-mi .titulo-seccion::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .descripcion-sobre-mi {
+    width: 100%;
+    text-align: justify;
+  }
+
+  /* CONTACTO */
+  .contenedor-contacto {
+    width: 100%;
+    max-width: none;
+  }
+
+  .seccion-contacto .titulo-seccion {
+    text-align: center;
+  }
+
+  .seccion-contacto .titulo-seccion::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .descripcion-contacto {
+    text-align: center;
+  }
+
+  .informacion-contacto {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px 28px;
+    padding-top: 0;
+  }
+
+  .redes-contacto {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .tarjeta-contacto {
+    width: 100%;
+  }
+
+  /* FOOTER */
+  .footer-superior {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .footer-marca {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .footer-marca-superior {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-marca-texto {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .footer-cta {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .footer-inferior {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-contacto {
+    justify-content: center;
   }
 }
 
 @media (max-width: 576px) {
+  #root {
+    --margen-lateral: 24px;
+  }
+
   .app {
-    padding: 24px;
+    padding: 24px var(--margen-lateral);
   }
 
   .navbar {
-    padding: 16px 24px;
+    padding: 16px var(--margen-lateral);
   }
 
   .navbar-nombre {
@@ -658,7 +903,15 @@ a.dato-contacto:hover {
   }
 
   .seccion-personal {
-    padding: 80px 24px 70px;
+    padding: 80px var(--margen-lateral) 70px;
+  }
+
+  .titulo-principal {
+    font-size: 40px !important;
+  }
+
+  .descripcion-sobre-mi {
+    font-size: 16px;
   }
 
   .cabecera-experiencia,
@@ -672,21 +925,13 @@ a.dato-contacto:hover {
     margin-left: 0;
   }
 
-  .titulo-principal {
-    font-size: 40px !important;
-  }
-
-  .descripcion-sobre-mi {
-    font-size: 16px;
-  }
-
   .footer-overlay {
-    padding: 32px 24px 24px;
+    padding: 32px var(--margen-lateral) 24px;
   }
 
   .footer-superior {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .footer-nombre {
@@ -699,10 +944,39 @@ a.dato-contacto:hover {
 
   .footer-inferior {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .footer-contacto {
     gap: 14px;
+  }
+
+  .footer-marca-superior {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer-marca-texto {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-texto {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-copy {
+    text-align: center;
+  }
+
+  .tarjeta-contacto {
+    padding: 18px;
+  }
+
+  .footer-avatar {
+    margin-bottom: 8px;
   }
 }

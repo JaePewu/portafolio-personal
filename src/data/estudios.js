@@ -17,4 +17,10 @@ export const estudios = [
     estudio: "Bootcamp Desarrollo Web Front-End",
     fecha: "Mar 2023 - Ago 2023",
   },
+  {
+    id: 4,
+    institucion: "Instituto Profesional AIEP",
+    estudio: "Técnico de Nivel Superior en Peluquería",
+    fecha: "Mar 2012 - Jun 2014",
+  },
 ];

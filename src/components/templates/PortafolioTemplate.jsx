@@ -1,3 +1,5 @@
+import { FloatButton } from "antd";
+import { ArrowUpOutlined } from "@ant-design/icons";
 import Navbar from "../organisms/Navbar";
 import SeccionPersonal from "../organisms/SeccionPersonal";
 import SeccionSobreMi from "../organisms/SeccionSobreMi";
@@ -28,6 +30,23 @@ function PortafolioTemplate({ perfil, experiencias, estudios, proyectos }) {
       </main>
 
       <Footer />
+
+      <FloatButton.BackTop
+        icon={<ArrowUpOutlined />}
+        tooltip="Volver al inicio"
+        visibilityHeight={300}
+        className="boton-volver-arriba"
+        style={{ right: 24, bottom: 24 }}
+        styles={{
+          root: {
+            backgroundColor: "var(--color-terracota)",
+            borderColor: "var(--color-terracota)",
+          },
+          icon: {
+            color: "var(--color-crema)",
+          },
+        }}
+      />
     </>
   );
 }
