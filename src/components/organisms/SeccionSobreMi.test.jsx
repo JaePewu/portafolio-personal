@@ -18,6 +18,6 @@ describe("Componente SeccionSobreMi", () => {
       }),
     ).toBeInTheDocument();
 
-    expect(screen.getByText(perfil.descripcion)).toBeInTheDocument();
+    expect(screen.getByText(perfil.sobreMi)).toBeInTheDocument();
   });
 });

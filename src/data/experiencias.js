@@ -19,6 +19,15 @@ export const experiencias = [
   },
   {
     id: 3,
+    cargo: "Desarrolladora Web Front-End (Bootcamp)",
+    empresa: "Laboratoria",
+    fechaInicio: "Mar 2023",
+    fechaTermino: "Ago 2023",
+    descripcion:
+      "Desarrollo de proyectos web individuales y colaborativos con HTML, CSS, JavaScript y React. Consumo de APIs, control de versiones con Git y GitHub, y trabajo con metodologías ágiles.",
+  },
+  {
+    id: 4,
     cargo: "Pastelera y repostera",
     empresa: "Sueños de Julián",
     fechaInicio: "2016",

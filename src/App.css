@@ -1,5 +1,14 @@
 #root {
-  min-height: 100vh;
+  /*min-height: 100vh;*/
+  --margen-lateral: clamp(24px, 8vw, 120px);
+}
+/* Contenido alineado en toda la página */
+.navbar,
+.seccion-personal,
+.app,
+.footer-overlay {
+  padding-left: var(--margen-lateral);
+  padding-right: var(--margen-lateral);
 }
 
 /********** PORTADA **********/
@@ -56,6 +65,32 @@
   height: 320px;
   object-fit: cover;
   border-radius: 20px;
+}
+
+.imagen-perfil-redonda {
+  flex-shrink: 0;
+}
+
+.imagen-perfil-redonda img,
+.imagen-perfil-redonda .ant-avatar-img {
+  object-fit: cover;
+}
+
+.bloque-imagen-sobre-mi .ant-avatar {
+  display: block;
+  width: min(100%, 340px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.bloque-imagen-sobre-mi .ant-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /********** COLUMNAS DE TARJETAS **********/
@@ -195,7 +230,6 @@
   min-height: 250px;
 }
 
-/* Portada temporal */
 .portada-proyecto {
   display: flex;
   flex-direction: column;
@@ -216,11 +250,13 @@
   font-size: 42px;
 }
 
-/* Imagen del proyecto ¿?*/
+/* Imagen del proyecto*/
 .imagen-proyecto {
+  display: block;
   width: 100%;
   height: 190px;
   object-fit: cover;
+  object-position: center top;
 }
 
 .titulo-proyecto {
@@ -337,7 +373,7 @@
 
 /********** SECCION PERSONAL **********/
 .seccion-personal {
-  padding: 120px 40px 100px;
+  padding: 120px var(--margen-lateral) 100px;
 }
 
 .contenido-personal {
@@ -537,7 +573,7 @@ a.dato-contacto:hover {
 }
 
 .footer-overlay {
-  padding: 48px 40px 28px;
+  padding: 48px var(--margen-lateral) 28px;
 }
 
 .footer-superior {
@@ -668,24 +704,6 @@ a.dato-contacto:hover {
   color: var(--color-naranja);
 }
 
-.footer-volver-icono {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  text-decoration: none;
-  color: var(--color-crema);
-  background-color: rgba(249, 245, 237, 0.14);
-  border: 1px solid rgba(249, 245, 237, 0.25);
-  border-radius: 50%;
-}
-
-.footer-volver-icono:hover {
-  background-color: var(--color-terracota);
-  color: var(--color-crema);
-}
-
 /********** NAVBAR MOVIL **********/
 .navbar-boton-movil {
   display: none !important;
@@ -746,7 +764,7 @@ a.dato-contacto:hover {
   }
 
   .navbar {
-    padding: 18px 32px;
+    padding: 18px var(--margen-lateral);
   }
 
   .navbar-menu {
@@ -761,12 +779,16 @@ a.dato-contacto:hover {
 }
 
 @media (max-width: 576px) {
+  #root {
+    --margen-lateral: 24px;
+  }
+
   .app {
-    padding: 24px;
+    padding: 24px var(--margen-lateral);
   }
 
   .navbar {
-    padding: 16px 24px;
+    padding: 16px var(--margen-lateral);
   }
 
   .navbar-nombre {
@@ -774,7 +796,15 @@ a.dato-contacto:hover {
   }
 
   .seccion-personal {
-    padding: 80px 24px 70px;
+    padding: 80px var(--margen-lateral) 70px;
+  }
+
+  .titulo-principal {
+    font-size: 40px !important;
+  }
+
+  .descripcion-sobre-mi {
+    font-size: 16px;
   }
 
   .cabecera-experiencia,
@@ -788,16 +818,8 @@ a.dato-contacto:hover {
     margin-left: 0;
   }
 
-  .titulo-principal {
-    font-size: 40px !important;
-  }
-
-  .descripcion-sobre-mi {
-    font-size: 16px;
-  }
-
   .footer-overlay {
-    padding: 32px 24px 24px;
+    padding: 32px var(--margen-lateral) 24px;
   }
 
   .footer-superior {

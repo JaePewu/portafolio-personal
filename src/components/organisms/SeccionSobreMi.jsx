@@ -10,7 +10,7 @@ function SeccionSobreMi({ perfil }) {
   return (
     <section id="sobre-mi" className="seccion-sobre-mi">
       <Row gutter={[32, 32]} align="middle">
-        <Col xs={24} md={10}>
+        <Col xs={24} lg={10}>
           <div className="bloque-imagen-sobre-mi">
             <ImagenPerfil
               imagen={fotoPerfil}
@@ -19,12 +19,12 @@ function SeccionSobreMi({ perfil }) {
           </div>
         </Col>
 
-        <Col xs={24} md={14}>
+        <Col xs={24} lg={14}>
           <div className="contenido-sobre-mi">
             <TituloSeccion texto="Sobre mí" />
 
             <Paragraph className="descripcion-sobre-mi">
-              {perfil.descripcion}
+              {perfil.sobreMi}
             </Paragraph>
           </div>
         </Col>

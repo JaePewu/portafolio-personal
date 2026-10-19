@@ -1,5 +1,4 @@
 import {
-  ArrowUpOutlined,
   MailOutlined,
   LinkedinOutlined,
   GithubOutlined,
@@ -70,15 +69,6 @@ function Footer() {
               ✿
             </span>
           </p>
-
-          <a
-            href="#inicio"
-            className="footer-volver-icono"
-            aria-label="Volver al inicio"
-            title="Volver al inicio"
-          >
-            <ArrowUpOutlined />
-          </a>
         </div>
       </div>
     </footer>

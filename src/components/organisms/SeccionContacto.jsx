@@ -16,8 +16,9 @@ function SeccionContacto() {
         <TituloSeccion texto="Contacto" />
 
         <p className="descripcion-contacto">
-          Puedes escribirme directamente o completar el formulario. Te
-          responderé lo antes posible.
+          ¿Tienes una consulta o propuesta? Puedes contactarme por correo
+          electrónico o mediante mis redes profesionales. También puedes probar
+          el formulario de contacto.
         </p>
 
         <Row gutter={[40, 32]} align="top">

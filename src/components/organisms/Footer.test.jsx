@@ -34,13 +34,8 @@ describe("Componente Footer", () => {
     ).toHaveAttribute("href", "mailto:jael.yapur.ch@gmail.com");
   });
 
-  // Comprueba los enlaces internos
-  it("permite navegar al inicio y contacto", () => {
+  it("permite navegar a contacto", () => {
     render(<Footer />);
-
-    expect(
-      screen.getByRole("link", { name: "Volver al inicio" }),
-    ).toHaveAttribute("href", "#inicio");
 
     expect(screen.getByRole("link", { name: "Contactar" })).toHaveAttribute(
       "href",

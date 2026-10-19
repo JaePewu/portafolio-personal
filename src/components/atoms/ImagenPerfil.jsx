@@ -1,5 +1,15 @@
+import { Avatar } from "antd";
+
 function ImagenPerfil({ imagen, alt }) {
-  return <img src={imagen} alt={alt} className="imagen-perfil" />;
+  return (
+    <Avatar
+      src={imagen}
+      alt={alt}
+      shape="circle"
+      size={360}
+      className="imagen-perfil-redonda"
+    />
+  );
 }
 
 export default ImagenPerfil;
