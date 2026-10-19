@@ -1,10 +1,11 @@
 import { Row, Col, Typography } from "antd";
+
 import TituloSeccion from "../atoms/TituloSeccion";
 import ImagenPerfil from "../atoms/ImagenPerfil";
 
 import fotoPerfil from "../../assets/images/perfil.jpg";
 
-const { Paragraph } = Typography;
+const { Text, Paragraph } = Typography;
 
 function SeccionSobreMi({ perfil }) {
   return (
@@ -21,7 +22,9 @@ function SeccionSobreMi({ perfil }) {
 
         <Col xs={24} lg={14}>
           <div className="contenido-sobre-mi">
-            <TituloSeccion texto="Sobre mí" />
+            <Text className="etiqueta-sobre-mi">SOBRE MÍ</Text>
+
+            <TituloSeccion texto="Hola, soy Jael" />
 
             <Paragraph className="descripcion-sobre-mi">
               {perfil.sobreMi}

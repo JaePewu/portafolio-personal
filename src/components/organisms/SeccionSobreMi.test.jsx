@@ -9,8 +9,12 @@ describe("Componente SeccionSobreMi", () => {
     render(<SeccionSobreMi perfil={perfil} />);
 
     expect(
-      screen.getByRole("heading", { name: "Sobre mí" }),
+      screen.getByRole("heading", {
+        name: "Hola, soy Jael",
+      }),
     ).toBeInTheDocument();
+
+    expect(screen.getByText("SOBRE MÍ")).toBeInTheDocument();
 
     expect(
       screen.getByRole("img", {

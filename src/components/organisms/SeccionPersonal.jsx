@@ -1,4 +1,6 @@
-import { Row, Col, Typography } from "antd";
+import { Row, Col, Typography, Button } from "antd";
+import { DownloadOutlined } from "@ant-design/icons";
+
 import BotonEnlace from "../atoms/BotonEnlace";
 
 const { Text, Title, Paragraph } = Typography;
@@ -23,6 +25,17 @@ function SeccionPersonal({ perfil }) {
 
             <div className="acciones-personales">
               <BotonEnlace texto="Ver proyectos" enlace="#proyectos" />
+
+              <Button
+                type="default"
+                shape="round"
+                icon={<DownloadOutlined />}
+                href="/CV_Jael_Yapur.pdf"
+                download="CV_Jael_Yapur.pdf"
+                className="boton-descargar-cv"
+              >
+                Descargar CV
+              </Button>
             </div>
           </div>
         </Col>

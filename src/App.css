@@ -169,7 +169,26 @@
 .acciones-personales {
   margin-top: 24px;
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
+}
+
+.boton-descargar-cv.ant-btn {
+  height: 42px;
+  padding: 0 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: var(--color-crema);
+  background-color: transparent;
+  border: 1px solid var(--color-crema);
+  border-radius: 24px;
+}
+
+.boton-descargar-cv.ant-btn:hover {
+  color: var(--color-cafe) !important;
+  background-color: var(--color-crema) !important;
+  border-color: var(--color-crema) !important;
 }
 
 /********** SECCIONES **********/
@@ -179,6 +198,19 @@
 .seccion-proyectos,
 .seccion-contacto {
   padding: 60px 0;
+}
+
+/* Fondos alternados usando la paleta actual */
+.seccion-experiencia,
+.seccion-proyectos {
+  background-color: color-mix(
+    in srgb,
+    var(--color-crema) 70%,
+    var(--color-beige) 30%
+  );
+  border-radius: 24px;
+  padding-inline: 20px;
+  margin-inline: -20px;
 }
 
 /********** TITULOS DE SECCION **********/
@@ -251,6 +283,20 @@
   font-size: 18px;
   line-height: 1.8;
   color: var(--color-cafe) !important;
+}
+
+.etiqueta-sobre-mi {
+  display: block;
+  margin-bottom: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: var(--color-terracota) !important;
+}
+
+.seccion-sobre-mi .titulo-seccion {
+  margin-top: 4px !important;
 }
 
 /********** COLUMNAS DE TARJETAS **********/
@@ -793,6 +839,10 @@ a.dato-contacto:hover {
     margin: 0 auto;
   }
 
+  .etiqueta-sobre-mi {
+    text-align: center;
+  }
+
   .seccion-sobre-mi .titulo-seccion {
     text-align: center;
   }
@@ -900,6 +950,13 @@ a.dato-contacto:hover {
 
   .navbar-nombre {
     font-size: 18px;
+  }
+
+  .seccion-experiencia,
+  .seccion-proyectos {
+    margin-inline: -8px;
+    padding-inline: 8px;
+    border-radius: 16px;
   }
 
   .seccion-personal {
