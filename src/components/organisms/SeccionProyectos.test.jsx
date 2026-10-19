@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 import SeccionProyectos from "./SeccionProyectos";
 
@@ -43,6 +43,39 @@ describe("Componente SeccionProyectos", () => {
     expect(
       screen.queryByRole("link", { name: /Ver proyecto/i }),
     ).not.toBeInTheDocument();
+  });
+
+  it("filtra proyectos con repositorio y permite mostrar todos", () => {
+    const proyectosFiltro = [
+      proyectosPrueba[0],
+      {
+        id: 2,
+        titulo: "Data Lovers",
+        descripcion: "Proyecto con repositorio público.",
+        tecnologias: ["JavaScript"],
+        imagen: "",
+        sitio: "",
+        repositorio: "https://github.com/ejemplo",
+      },
+    ];
+
+    render(<SeccionProyectos proyectos={proyectosFiltro} />);
+
+    // Inicialmente aparecen todos
+    expect(screen.getByText("EGB Digital")).toBeInTheDocument();
+    expect(screen.getByText("Data Lovers")).toBeInTheDocument();
+
+    // Filtrar proyectos que tienen repositorio
+    fireEvent.click(screen.getByText("Con repositorio"));
+
+    expect(screen.queryByText("EGB Digital")).not.toBeInTheDocument();
+    expect(screen.getByText("Data Lovers")).toBeInTheDocument();
+
+    // Volver a mostrar todos
+    fireEvent.click(screen.getByText("Todos"));
+
+    expect(screen.getByText("EGB Digital")).toBeInTheDocument();
+    expect(screen.getByText("Data Lovers")).toBeInTheDocument();
   });
 
   it("muestra los enlaces cuando están disponibles", () => {

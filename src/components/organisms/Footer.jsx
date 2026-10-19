@@ -6,9 +6,9 @@ import {
 
 import { Avatar } from "antd";
 
-function Footer() {
-  const anioActual = new Date().getFullYear();
+const anioActual = new Date().getFullYear();
 
+function Footer() {
   return (
     <footer className="footer-portafolio">
       <div className="footer-overlay">
