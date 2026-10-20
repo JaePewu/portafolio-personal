@@ -30,8 +30,8 @@ function SeccionPersonal({ perfil }) {
                 type="default"
                 shape="round"
                 icon={<DownloadOutlined />}
-                href="/CV_Jael_Yapur.pdf"
-                download="CV_Jael_Yapur.pdf"
+                href="/CV_Jael_Yapur_CH.pdf"
+                download="CV_Jael_Yapur_CH.pdf"
                 className="boton-descargar-cv"
               >
                 Descargar CV

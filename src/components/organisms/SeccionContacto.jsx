@@ -1,4 +1,4 @@
-import { Row, Col } from "antd";
+import { Row, Col, Typography } from "antd";
 import {
   MailOutlined,
   EnvironmentOutlined,
@@ -9,10 +9,14 @@ import {
 import TituloSeccion from "../atoms/TituloSeccion";
 import FormularioContacto from "./FormularioContacto";
 
+const { Text } = Typography;
+
 function SeccionContacto() {
   return (
     <section id="contacto" className="seccion-contacto">
       <div className="contenedor-contacto">
+        <Text className="etiqueta-contacto">HABLEMOS</Text>
+
         <TituloSeccion texto="Contacto" />
 
         <p className="descripcion-contacto">

@@ -3,11 +3,12 @@ import { render, screen, fireEvent } from "@testing-library/react";
 
 import SeccionProyectos from "./SeccionProyectos";
 
-// Datos para realizar las pruebas
+// Datos ficticios para realizar las pruebas
 const proyectosPrueba = [
   {
     id: 1,
     titulo: "EGB Digital",
+    categoria: "Full Stack",
     descripcion: "Sistema web de inspecciones de buses.",
     tecnologias: ["React", "PostgreSQL"],
     imagen: "",
@@ -17,6 +18,7 @@ const proyectosPrueba = [
 ];
 
 describe("Componente SeccionProyectos", () => {
+  // Comprueba que se muestre la información de un proyecto
   it("muestra la información de los proyectos", () => {
     render(<SeccionProyectos proyectos={proyectosPrueba} />);
 
@@ -24,18 +26,17 @@ describe("Componente SeccionProyectos", () => {
       screen.getByRole("heading", { name: "Proyectos" }),
     ).toBeInTheDocument();
 
-    //screen.getByText()	Busca un texto que debería existir.
+    // getByText() busca un texto que debería existir
     expect(screen.getByText("EGB Digital")).toBeInTheDocument();
-
     expect(screen.getByText("React")).toBeInTheDocument();
-
     expect(screen.getByText("PostgreSQL")).toBeInTheDocument();
   });
 
-  //it() Define una prueba individual
+  // Comprueba que no aparezcan enlaces cuando están vacíos
   it("no muestra enlaces cuando están vacíos", () => {
     render(<SeccionProyectos proyectos={proyectosPrueba} />);
 
+    // queryByRole() permite comprobar que un elemento no existe
     expect(
       screen.queryByRole("link", { name: /Ver repositorio/i }),
     ).not.toBeInTheDocument();
@@ -45,14 +46,26 @@ describe("Componente SeccionProyectos", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("filtra proyectos con repositorio y permite mostrar todos", () => {
+  // Comprueba el filtro por categorías utilizando diferentes proyectos
+  it("filtra proyectos por categoría y permite mostrar todos", () => {
     const proyectosFiltro = [
       proyectosPrueba[0],
       {
         id: 2,
         titulo: "Data Lovers",
-        descripcion: "Proyecto con repositorio público.",
+        categoria: "Front-End",
+        descripcion: "Proyecto de interfaz web.",
         tecnologias: ["JavaScript"],
+        imagen: "",
+        sitio: "",
+        repositorio: "https://github.com/ejemplo",
+      },
+      {
+        id: 3,
+        titulo: "TechStore",
+        categoria: "Backend",
+        descripcion: "Proyecto de API REST.",
+        tecnologias: ["Java"],
         imagen: "",
         sitio: "",
         repositorio: "https://github.com/ejemplo",
@@ -61,23 +74,41 @@ describe("Componente SeccionProyectos", () => {
 
     render(<SeccionProyectos proyectos={proyectosFiltro} />);
 
-    // Inicialmente aparecen todos
+    // Inicialmente aparecen todos los proyectos
     expect(screen.getByText("EGB Digital")).toBeInTheDocument();
     expect(screen.getByText("Data Lovers")).toBeInTheDocument();
+    expect(screen.getByText("TechStore")).toBeInTheDocument();
 
-    // Filtrar proyectos que tienen repositorio
-    fireEvent.click(screen.getByText("Con repositorio"));
+    // Selecciona Front-End y verifica qué proyecto se muestra
+    fireEvent.click(screen.getByText("Front-End"));
 
-    expect(screen.queryByText("EGB Digital")).not.toBeInTheDocument();
     expect(screen.getByText("Data Lovers")).toBeInTheDocument();
+    expect(screen.queryByText("EGB Digital")).not.toBeInTheDocument();
+    expect(screen.queryByText("TechStore")).not.toBeInTheDocument();
 
-    // Volver a mostrar todos
+    // Selecciona Full Stack
+    fireEvent.click(screen.getByText("Full Stack"));
+
+    expect(screen.getByText("EGB Digital")).toBeInTheDocument();
+    expect(screen.queryByText("Data Lovers")).not.toBeInTheDocument();
+    expect(screen.queryByText("TechStore")).not.toBeInTheDocument();
+
+    // Selecciona Backend
+    fireEvent.click(screen.getByText("Backend"));
+
+    expect(screen.getByText("TechStore")).toBeInTheDocument();
+    expect(screen.queryByText("EGB Digital")).not.toBeInTheDocument();
+    expect(screen.queryByText("Data Lovers")).not.toBeInTheDocument();
+
+    // Vuelve a mostrar todos los proyectos
     fireEvent.click(screen.getByText("Todos"));
 
     expect(screen.getByText("EGB Digital")).toBeInTheDocument();
     expect(screen.getByText("Data Lovers")).toBeInTheDocument();
+    expect(screen.getByText("TechStore")).toBeInTheDocument();
   });
 
+  // Comprueba que los enlaces estén disponibles cuando tienen una URL
   it("muestra los enlaces cuando están disponibles", () => {
     const proyectoConEnlaces = [
       {
@@ -89,7 +120,7 @@ describe("Componente SeccionProyectos", () => {
 
     render(<SeccionProyectos proyectos={proyectoConEnlaces} />);
 
-    //screen.queryByRole()	Busca un elemento sin provocar un error si no existe
+    // toHaveAttribute() comprueba el valor de un atributo HTML
     expect(screen.getByRole("link", { name: /Ver proyecto/i })).toHaveAttribute(
       "href",
       "https://ejemplo.com",
@@ -98,5 +129,5 @@ describe("Componente SeccionProyectos", () => {
     expect(
       screen.getByRole("link", { name: /Ver repositorio/i }),
     ).toHaveAttribute("href", "https://github.com/ejemplo");
-  }); //toHaveAttribute()	Verifica que un atributo tenga el valor esperado
+  });
 });
