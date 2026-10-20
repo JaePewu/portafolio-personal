@@ -169,7 +169,26 @@
 .acciones-personales {
   margin-top: 24px;
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
+}
+
+.boton-descargar-cv.ant-btn {
+  height: 42px;
+  padding: 0 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: var(--color-crema);
+  background-color: transparent;
+  border: 1px solid var(--color-crema);
+  border-radius: 24px;
+}
+
+.boton-descargar-cv.ant-btn:hover {
+  color: var(--color-cafe) !important;
+  background-color: var(--color-crema) !important;
+  border-color: var(--color-crema) !important;
 }
 
 /********** SECCIONES **********/
@@ -179,6 +198,19 @@
 .seccion-proyectos,
 .seccion-contacto {
   padding: 60px 0;
+}
+
+/* Fondos alternados usando la paleta actual */
+.seccion-experiencia,
+.seccion-proyectos {
+  background-color: color-mix(
+    in srgb,
+    var(--color-crema) 70%,
+    var(--color-beige) 30%
+  );
+  border-radius: 24px;
+  padding-inline: 20px;
+  margin-inline: -20px;
 }
 
 /********** TITULOS DE SECCION **********/
@@ -251,6 +283,20 @@
   font-size: 18px;
   line-height: 1.8;
   color: var(--color-cafe) !important;
+}
+
+.etiqueta-sobre-mi {
+  display: block;
+  margin-bottom: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: var(--color-terracota) !important;
+}
+
+.seccion-sobre-mi .titulo-seccion {
+  margin-top: 4px !important;
 }
 
 /********** COLUMNAS DE TARJETAS **********/
@@ -373,6 +419,166 @@
   border-radius: 20px;
 }
 
+/********** EDUCACION Y CERTIFICACIONES **********/
+.etiqueta-formacion {
+  display: block;
+  margin-bottom: 4px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: var(--color-terracota) !important;
+}
+
+.seccion-estudios .titulo-seccion {
+  margin-top: 0 !important;
+}
+
+.subtitulo-formacion {
+  margin-bottom: 24px !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: var(--color-cafe) !important;
+}
+
+/* Línea de tiempo */
+.timeline-estudios {
+  margin-top: 28px;
+}
+
+.timeline-estudios .ant-timeline-item {
+  padding-bottom: 26px;
+}
+
+.timeline-estudios .ant-timeline-item-tail {
+  border-inline-start-color: var(--color-naranja);
+}
+
+/* Íconos de estudios */
+.icono-timeline-estudio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 15px;
+  color: var(--color-terracota);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-naranja);
+  border-radius: 50%;
+}
+
+/* Estudios dentro del Timeline */
+.timeline-estudios .item-estudio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: auto;
+  padding: 14px;
+  background-color: color-mix(
+    in srgb,
+    var(--color-crema) 55%,
+    var(--color-beige) 45%
+  );
+  border: 1px solid var(--color-beige);
+  border-radius: 12px;
+}
+
+.icono-tarjeta-estudio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  font-size: 19px;
+  color: var(--color-terracota);
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-beige);
+  border-radius: 50%;
+}
+
+.timeline-estudios .cabecera-estudio {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.timeline-estudios .cabecera-estudio > div:first-child {
+  flex: 1 1 190px;
+  width: auto;
+  min-width: 0;
+}
+
+.timeline-estudios .fecha-estudio {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* Panel de certificaciones */
+.panel-certificaciones.ant-card {
+  height: 100%;
+  background-color: var(--color-verde-suave);
+  border: none;
+  border-radius: 16px;
+}
+
+.panel-certificaciones .ant-card-body {
+  padding: 24px;
+}
+
+/* Certificaciones */
+.lista-certificaciones .ant-list-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 0;
+  border-block-end: 1px solid var(--color-crema);
+}
+
+.lista-certificaciones .ant-list-item:last-child {
+  border-block-end: none;
+}
+
+.icono-certificacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  color: var(--color-terracota);
+  background-color: var(--color-crema);
+  border-radius: 50%;
+}
+
+.contenido-certificacion {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.nombre-certificacion {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--color-cafe) !important;
+}
+
+.detalle-certificacion {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: var(--color-terracota) !important;
+}
+
 /********** TARJETA PROYECTO **********/
 .tarjeta-proyecto {
   width: 100%;
@@ -458,6 +664,44 @@
   margin-top: auto;
 }
 
+/********** FILTRO PROYECTOS **********/
+.filtro-proyectos.ant-segmented {
+  padding: 5px;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-beige);
+  border-radius: 24px;
+}
+
+.filtro-proyectos .ant-segmented-item {
+  color: var(--color-cafe);
+  border-radius: 20px;
+}
+
+.filtro-proyectos .ant-segmented-item-label {
+  min-height: 36px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.filtro-proyectos .ant-segmented-item-selected,
+.filtro-proyectos .ant-segmented-thumb {
+  background-color: var(--color-terracota) !important;
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+.filtro-proyectos .ant-segmented-item-selected .ant-segmented-item-label {
+  color: var(--color-crema) !important;
+}
+
+.filtro-proyectos
+  .ant-segmented-item:not(.ant-segmented-item-selected):hover
+  .ant-segmented-item-label {
+  color: var(--color-terracota);
+}
+
 /********** BOTON ENLACE **********/
 .boton-enlace {
   height: 42px;
@@ -475,6 +719,21 @@
 }
 
 /********** SECCION CONTACTO **********/
+
+.etiqueta-contacto {
+  display: block;
+  margin-bottom: 4px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: var(--color-terracota) !important;
+}
+
+.seccion-contacto .titulo-seccion {
+  margin-top: 0 !important;
+}
+
 .contenedor-contacto {
   width: 100%;
   max-width: 800px;
@@ -567,6 +826,10 @@ a.dato-contacto:hover {
 .formulario-contacto .ant-input-focused {
   border-color: var(--color-terracota);
   box-shadow: 0 0 0 2px rgba(181, 82, 45, 0.12);
+}
+
+.formulario-contacto textarea.ant-input {
+  resize: none;
 }
 
 /********** BOTON CONTACTO **********/
@@ -793,6 +1056,10 @@ a.dato-contacto:hover {
     margin: 0 auto;
   }
 
+  .etiqueta-sobre-mi {
+    text-align: center;
+  }
+
   .seccion-sobre-mi .titulo-seccion {
     text-align: center;
   }
@@ -808,6 +1075,10 @@ a.dato-contacto:hover {
   }
 
   /* CONTACTO */
+  .etiqueta-contacto {
+    text-align: center;
+  }
+
   .contenedor-contacto {
     width: 100%;
     max-width: none;
@@ -900,6 +1171,13 @@ a.dato-contacto:hover {
 
   .navbar-nombre {
     font-size: 18px;
+  }
+
+  .seccion-experiencia,
+  .seccion-proyectos {
+    margin-inline: -8px;
+    padding-inline: 8px;
+    border-radius: 16px;
   }
 
   .seccion-personal {

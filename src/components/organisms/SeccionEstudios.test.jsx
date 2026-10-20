@@ -18,23 +18,40 @@ describe("Componente SeccionEstudios", () => {
     render(<SeccionEstudios estudios={estudiosPrueba} />);
 
     expect(
-      screen.getByRole("heading", { name: "Estudios" }),
+      screen.getByRole("heading", {
+        name: "Educación y certificaciones",
+      }),
     ).toBeInTheDocument();
 
     expect(screen.getByText("Analista Programador")).toBeInTheDocument();
-
     expect(screen.getByText("Instituto de prueba")).toBeInTheDocument();
-
     expect(screen.getByText("2025 - 2027")).toBeInTheDocument();
   });
 
-  it("no muestra tarjetas si no hay estudios", () => {
+  it("no muestra estudios si la lista está vacía", () => {
     render(<SeccionEstudios estudios={[]} />);
 
     expect(
-      screen.getByRole("heading", { name: "Estudios" }),
+      screen.getByRole("heading", {
+        name: "Educación y certificaciones",
+      }),
     ).toBeInTheDocument();
 
-    expect(screen.queryByRole("heading", { level: 4 })).not.toBeInTheDocument();
+    expect(screen.queryByText("Analista Programador")).not.toBeInTheDocument();
+  });
+
+  it("muestra los cursos y certificaciones", () => {
+    render(<SeccionEstudios estudios={estudiosPrueba} />);
+
+    expect(
+      screen.getByText("Microsoft Certified: Azure Fundamentals (AZ-900)"),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByText("Scrum Foundation Professional Certification (SFPC)"),
+    ).toBeInTheDocument();
+
+    expect(screen.getByText("Curso Profesional de Git")).toBeInTheDocument();
+    expect(screen.getByText("Introducción a JavaScript")).toBeInTheDocument();
   });
 });

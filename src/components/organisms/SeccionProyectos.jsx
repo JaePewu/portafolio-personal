@@ -5,13 +5,18 @@ import TituloSeccion from "../atoms/TituloSeccion";
 import TarjetaProyecto from "../molecules/TarjetaProyecto";
 
 function SeccionProyectos({ proyectos }) {
+  // Guarda la categoría seleccionada por el usuario.
+  // Inicialmente se muestran todos los proyectos.
   const [filtro, setFiltro] = useState("todos");
 
-  // Filtra los proyectos según la opción seleccionada
+  // Filtra los proyectos según la categoría seleccionada.
+  // El operador ternario (? :) funciona como un if / else:
+  // ? Si es "todos", muestra todos los proyectos.
+  // : Si no es "todos", muestra solo los de la categoría elegida.
   const proyectosFiltrados =
-    filtro === "repositorio"
-      ? proyectos.filter((proyecto) => proyecto.repositorio)
-      : proyectos;
+    filtro === "todos"
+      ? proyectos
+      : proyectos.filter((proyecto) => proyecto.categoria === filtro);
 
   return (
     <section id="proyectos" className="seccion-proyectos">
@@ -19,9 +24,12 @@ function SeccionProyectos({ proyectos }) {
 
       <div style={{ marginBottom: 24 }}>
         <Segmented
+          className="filtro-proyectos"
           options={[
             { label: "Todos", value: "todos" },
-            { label: "Con repositorio", value: "repositorio" },
+            { label: "Front-End", value: "Front-End" },
+            { label: "Full Stack", value: "Full Stack" },
+            { label: "Backend", value: "Backend" },
           ]}
           value={filtro}
           onChange={setFiltro}

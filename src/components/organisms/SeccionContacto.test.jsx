@@ -8,6 +8,8 @@ describe("Componente SeccionContacto", () => {
   it("muestra la sección y sus campos", () => {
     render(<SeccionContacto />);
 
+    expect(screen.getByText("HABLEMOS")).toBeInTheDocument();
+
     expect(
       screen.getByRole("heading", {
         level: 2,
